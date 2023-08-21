@@ -29,33 +29,34 @@ chemin = "C:\\Users\\Audensiel\\Desktop\\image_recognition_and_segmentation\\Pen
 
 
 def chargement_model(num_classes):
-    # On viens charger le modele maskrcnn resnet50 préentrainé sur le dataset COCO
+    # On vient charger le modèle maskrcnn resnet50 préentraîné sur le dataset COCO
     model = torchvision.models.detection.maskrcnn_resnet50_fpn(pretrained=True)
 
-    # On récupère le nombre d'input du modele resnet pour la prédiction des bounding box
+    # On récupère le nombre d'inputs du modèle resnet pour la prédiction des bounding box
     in_features = model.roi_heads.box_predictor.cls_score.in_features
-    # Puis on défini le nombre d'entrée du modèle que va venir fine-tune pour que ça correspond à notre besoin
+    # Puis on définit le nombre d'entrées du modèle qu'on va venir fine-tuner pour que ça corresponde à notre besoin
     model.roi_heads.box_predictor = FastRCNNPredictor(in_features, num_classes)
 
     # On vient modifier la tête de prédiction des masques de segmentation pour le nombre de classes souhaité
     in_features_mask = model.roi_heads.mask_predictor.conv5_mask.in_channels
     hidden_layer = 256
-    # On défini le nombre d'entrée du nouveau modèle pour la prédiction des masques
+    # On définit le nombre d'entrées du nouveau modèle pour la prédiction des masques
     model.roi_heads.mask_predictor = MaskRCNNPredictor(in_features_mask,
                                                        hidden_layer,
                                                        num_classes)
     return model
 
 
+
 def get_transform(train):
     transforms = []
-    # convertit l'image d'entrée en un tenseur pytorch (nécessaire pour traiter les images avec Pytorch)
+    # Convertit l'image d'entrée en un tenseur PyTorch (nécessaire pour traiter les images avec PyTorch)
     transforms.append(T.ToTensor())
     if train:
-        transforms.append(T.RandomHorizontalFlip(0.5)) #Crée des image miroirs pour augmenter le nombre de données
+        transforms.append(T.RandomHorizontalFlip(0.5)) # Crée des images miroirs pour augmenter le nombre de données
     return T.Compose(transforms)
 
-###################################
+################TEST DES FONCTIONS###################
 #num_classes = 10
 #model = chargement_model(num_classes)  
 #print(model)
@@ -63,7 +64,7 @@ def get_transform(train):
 #input_image = torch.randn(1, 3, 256, 256) 
 #predictions = model(input_image)
 #print(predictions)
-###################################
+#####################################################
 
 # Créer des transformations pour les ensembles d'entraînement et de test
 transform_train = get_transform(train=True) 
@@ -73,6 +74,7 @@ dataset = PennFudanDataset(root=chemin, transforms=transform_train)
 dataset_test = PennFudanDataset(root=chemin, transforms=transform_test)
 
 # On divise les ensembles de données en ensembles d'entraînement et de test
+
 torch.manual_seed(1)
 indices = torch.randperm(len(dataset)).tolist()
 dataset = torch.utils.data.Subset(dataset, indices[:-50])
