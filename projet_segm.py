@@ -90,7 +90,8 @@ data_loader_test = torch.utils.data.DataLoader(
     collate_fn=utils.collate_fn)
 
 
-device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
+# device = torch.device('cpu')
+device = "cuda" if torch.cuda.is_available() else "cpu"
 
 ####################
 
@@ -114,7 +115,7 @@ device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cp
 
 ##################
 
-device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
+device = torch.device('cpu')
 
  #Chargement du modèle
 
@@ -132,12 +133,14 @@ lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer,
                                                gamma=0.1)
 
 
-
 # Nombre d'epoch pour l'entraînement
-num_epochs = 10
-for epoch in range(num_epochs):
-    train_one_epoch(model, optimizer, data_loader, device, epoch, print_freq=10)
-    lr_scheduler.step()
-    # Évaluation sur l'ensemble de test
-    evaluate(model, data_loader_test, device=device)
+num_epochs = 1
+# for epoch in range(num_epochs):
+#     train_one_epoch(model, optimizer, data_loader, device, epoch, print_freq=10)
+#     lr_scheduler.step()
+#     # Évaluation sur l'ensemble de test (uniquement si le dispositif est le GPU)
+#     if device.type == 'cuda':
+#         evaluate(model, data_loader_test, device=device)
 
+
+evaluate(model, data_loader_test, device=device)
