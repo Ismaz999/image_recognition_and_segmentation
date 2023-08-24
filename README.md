@@ -18,12 +18,27 @@ Le projet est structuré comme suit :
 
 1. Assurez-vous d'avoir les bibliothèques Python nécessaires installées. Vous pouvez les installer en utilisant la commande suivante :
 
-  ```bash
+   ```bash
    pip install -r requirements.txt
-```
+    ```
+2. **Téléchargement des Données :** Téléchargez le jeu de données PennFudan Pedestrian à partir du lien suivant : [PennFudan Pedestrian Dataset](https://www.cis.upenn.edu/~jshi/ped_html/PennFudanPed.zip).
 
-2. Téléchargez le jeu de données PennFudan Pedestrian à partir du lien suivant : [PennFudan Pedestrian Dataset](https://www.cis.upenn.edu/~jshi/ped_html/).
+3. **Clonage du Référentiel PyTorch Vision :** Clonez le référentiel GitHub PyTorch Vision en utilisant le lien suivant : [https://github.com/pytorch/vision.git](https://github.com/pytorch/vision.git).
 
-3. Dans le fichier `projet_segm.py`, vous pouvez ajuster les paramètres tels que le chemin vers le jeu de données, les transformations de données, le nombre d'époques, etc.
+4. **Ajout des Fichiers de Détection :** Dans le dossier du projet, placez les fichiers du répertoire `vision/references/detection` du référentiel PyTorch Vision. Ces fichiers sont nécessaires pour la détection d'objets.
 
-4. Exécutez le script `projet_segm.py` pour effectuer l'entraînement et l'évaluation du modèle Mask R-CNN.
+5. **Ajustement des Paramètres :** Dans le fichier `projet_segm.py`, vous pouvez ajuster les paramètres tels que le chemin vers le jeu de données, les transformations de données, le nombre d'époques, etc.
+
+6. **Résolution des Erreurs :** Si vous rencontrez les erreurs "AssertionError - Torch not compiled with CUDA enabled" et "AttributeError - module torch has no attribute _six", suivez les étapes de résolution mentionnées précédemment.
+  Voici les solutions correspondantes :
+
+   - **AssertionError - Torch non compilé avec CUDA activé :** Supprimez toutes les dépendances liées à Torch et CUDA en utilisant les commandes `conda list torch` et `conda list cuda`. Réinstallez-les ensuite avec les commandes suivantes :
+     ```bash
+     conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
+     conda install -c anaconda cudatoolkit
+     ```
+
+- **AttributeError - module torch sans attribut _six :** Remplacez toutes les occurrences de `torch._six.string_classes` par `"str"` dans le fichier `coco_eval.py`.
+   
+8. **Exécution du Script :** Exécutez le script `projet_segm.py` pour effectuer l'entraînement et l'évaluation du modèle Mask R-CNN.
+
