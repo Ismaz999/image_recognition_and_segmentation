@@ -41,4 +41,15 @@ Le projet est structuré comme suit :
    - **AttributeError - module torch sans attribut _six :** Remplacez toutes les occurrences de `torch._six.string_classes` par `"str"` dans le fichier `coco_eval.py`.
    
 8. **Exécution du Script :** Exécutez le script `projet_segm.py` pour effectuer l'entraînement et l'évaluation du modèle Mask R-CNN.
+   
+## Résultats
+
+### Masque de Segmentation
+
+<img src="https://imgur.com/SuksJfJ" alt="Masque de Segmentation" width="400">
+
+### Évolution de la Perte d'Entraînement
+
+<img src="https://imgur.com/E5cetUj" alt="Évolution de la Perte d'Entraînement" width="600">
+
 
