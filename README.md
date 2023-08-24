@@ -46,10 +46,10 @@ Le projet est structuré comme suit :
 
 ### Masque de Segmentation
 
-<img src="https://imgur.com/SuksJfJ" alt="Masque de Segmentation" width="400">
+<img src="https://i.imgur.com/SuksJfJ.png" alt="Masque de Segmentation" width="400">
 
 ### Évolution de la Perte d'Entraînement
 
-<img src="https://imgur.com/E5cetUj" alt="Évolution de la Perte d'Entraînement" width="600">
+<img src="https://i.imgur.com/E5cetUj.png" alt="Évolution de la Perte d'Entraînement" width="600">
 
 
