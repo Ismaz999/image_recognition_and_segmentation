@@ -38,7 +38,7 @@ Le projet est structuré comme suit :
      conda install -c anaconda cudatoolkit
      ```
 
-- **AttributeError - module torch sans attribut _six :** Remplacez toutes les occurrences de `torch._six.string_classes` par `"str"` dans le fichier `coco_eval.py`.
+   - **AttributeError - module torch sans attribut _six :** Remplacez toutes les occurrences de `torch._six.string_classes` par `"str"` dans le fichier `coco_eval.py`.
    
 8. **Exécution du Script :** Exécutez le script `projet_segm.py` pour effectuer l'entraînement et l'évaluation du modèle Mask R-CNN.
 
