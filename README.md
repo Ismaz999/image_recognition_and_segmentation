@@ -1,14 +1,14 @@
 # image_recognition_and_segmentation
 
-Ce dépôt contient le code et les fichiers nécessaires pour réaliser un projet de segmentation d'images à l'aide de Mask R-CNN. Le projet est basé sur le dataset PennFudan Pedestrian.
+Ce dépôt contient le code et les fichiers nécessaires pour réaliser un projet de segmentation d'images à l'aide de Mask R-CNN. Le projet utilise sur le dataset PennFudan Pedestrian.
 
 ## Introduction
 
-Ce projet utilise l'algorithme Mask R-CNN pour la segmentation d'objets dans des images. L'algorithme Mask R-CNN combine la détection d'objets (bounding boxes) avec la segmentation sémantique des objets (masks), permettant ainsi d'identifier et de localiser précisément les objets d'intérêt dans une image.
+Ce projet utilise l'algorithme Mask R-CNN pour la segmentation d'objets dans des images. L'algorithme Mask R-CNN combine la détection d'objets (bounding boxes) avec la segmentation des objets (masks), permettant ainsi d'identifier et de localiser précisément les objets d'intérêt dans une image.
 
 ## Contenu du projet
 
-Le projet est structuré comme suit :
+Le projet est structuré comme suivant :
 
 - `dataset_manager.py`: Ce fichier contient la définition de la classe `PennFudanDataset`, qui gère la préparation des données pour l'entraînement et l'évaluation du modèle.
 
