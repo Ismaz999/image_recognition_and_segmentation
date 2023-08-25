@@ -32,17 +32,19 @@ Le projet est structuré comme suit :
 6. **Résolution des Erreurs :** Si vous rencontrez les erreurs "AssertionError - Torch not compiled with CUDA enabled" et "AttributeError - module torch has no attribute _six", suivez les étapes de résolution mentionnées précédemment.
   Voici les solutions correspondantes :
 
-   - **AssertionError - Torch non compilé avec CUDA activé :** Supprimez toutes les dépendances liées à Torch et CUDA en utilisant les commandes `conda list torch` et `conda list cuda`. Réinstallez-les ensuite avec les commandes suivantes :
+   - **AssertionError - Torch not compiled with CUDA enabled :** Supprimez toutes les dépendances liées à Torch et CUDA en utilisant les commandes `conda list torch` et `conda list cuda`. Réinstallez-les ensuite avec les commandes suivantes :
      ```bash
      conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
      conda install -c anaconda cudatoolkit
      ```
 
-   - **AttributeError - module torch sans attribut _six :** Remplacez toutes les occurrences de `torch._six.string_classes` par `"str"` dans le fichier `coco_eval.py`.
+   - **AttributeError - module torch has no attribute _six :** Remplacez toutes les occurrences de `torch._six.string_classes` par `"str"` dans le fichier `coco_eval.py`.
    
 8. **Exécution du Script :** Exécutez le script `projet_segm.py` pour effectuer l'entraînement et l'évaluation du modèle Mask R-CNN.
    
 ## Résultats
+
+Après avoir exécuté le script d'entraînement et d'évaluation sur un ensemble de test restreint de 50 images, nous avons obtenu les résultats suivants
 
 ### Masque de Segmentation
 
@@ -52,4 +54,5 @@ Le projet est structuré comme suit :
 
 <img src="https://i.imgur.com/E5cetUj.png" alt="Évolution de la Perte d'Entraînement" width="600">
 
+Il est important de noter que nous avons utilisé un ensemble de données d'entraînement restreint comprenant seulement 10 images pour accélérer le processus d'entraînement. Cependant, en utilisant un nombre plus important d'images pour l'entraînement, les résultats pourraient être considérablement améliorés. 
 
