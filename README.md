@@ -54,5 +54,5 @@ Après avoir exécuté le script d'entraînement et d'évaluation sur un ensembl
 
 <img src="https://i.imgur.com/E5cetUj.png" alt="Évolution de la Perte d'Entraînement" width="600">
 
-Il est important de noter que nous avons utilisé un ensemble de données d'entraînement restreint comprenant seulement 10 images pour accélérer le processus d'entraînement. Cependant, en utilisant un nombre plus important d'images pour l'entraînement, les résultats pourraient être considérablement améliorés. 
+Il est important de noter que nous avons utilisé un ensemble de données d'entraînement restreint comprenant seulement 50 images pour accélérer le processus d'entraînement. Cependant, en utilisant un nombre plus important d'images pour l'entraînement, les résultats pourraient être considérablement améliorés. 
 
