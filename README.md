@@ -48,11 +48,26 @@ Après avoir exécuté le script d'entraînement et d'évaluation sur un ensembl
 
 ### Masque de Segmentation
 
-<img src="https://i.imgur.com/SuksJfJ.png" alt="Masque de Segmentation" width="400">
+<table>
+  <tr>
+    <td>Epoch 1</td>
+    <td>Epoch 2</td>
+    <td>Epoch 3</td>
+    <td>Epoch 4</td>
+    <td>Epoch 5</td>
+  </tr>
+  <tr>
+    <td><img src="https://i.imgur.com/08ts1Zy.png" alt="Masque de Segmentation" width="200"></td>
+    <td><img src="https://i.imgur.com/z2UvPMj.png" alt="Masque de Segmentation" width="200"></td>
+    <td><img src="https://i.imgur.com/zVbBSeE.png" alt="Masque de Segmentation" width="200"></td>
+    <td><img src="https://i.imgur.com/Z5bNpSu.png" alt="Masque de Segmentation" width="200"></td>
+    <td><img src="https://i.imgur.com/atIMUp0.png" alt="Masque de Segmentation" width="200"></td>
+  </tr>
+</table>>
 
 ### Évolution de la Perte d'Entraînement
 
-<img src="https://i.imgur.com/E5cetUj.png" alt="Évolution de la Perte d'Entraînement" width="600">
+<img src="https://i.imgur.com/RQJIBnl.png" alt="Évolution de la Perte d'Entraînement" width="600">
 
 Il est important de noter que nous avons utilisé un ensemble de données d'entraînement restreint comprenant seulement 50 images pour accélérer le processus d'entraînement. Cependant, en utilisant un nombre plus important d'images pour l'entraînement, les résultats pourraient être considérablement améliorés. 
 
